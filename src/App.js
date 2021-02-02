@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import  Test from './Test';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
           rel="noopener noreferrer"
         >
           Slava Birfir is owner of this App
-        </a>
+          </a>
+          <Test />
       </header>
     </div>
   );

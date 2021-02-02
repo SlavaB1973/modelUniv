@@ -6,7 +6,7 @@ from matplotlib.figure import Figure
 
 from flask import Flask
 import datetime
-app = Flask(__name__)
+app = Flask(__name__,static_folder='../build', static_url_path='/')
 
 @app.route('/time')
 def get_time():

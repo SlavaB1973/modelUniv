@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 function Test() {
   const [currentTime, setCurrentTime] = useState(0);
   const [flag, setFlag] = useState(true);
-
+/*
   useEffect(() => {
     console.log('Set interval');
     const interval = setInterval(() => {
@@ -20,7 +20,7 @@ function Test() {
     };
   }, []);
 
-
+*/
 
   return (
      <>

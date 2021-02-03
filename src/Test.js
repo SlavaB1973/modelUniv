@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 function Test() {
-  const [currentTime, setCurrentTime] = useState(0);
+  const [currentTime, setCurrentTime] = useState(new Date().toLocaleString());
   const [flag, setFlag] = useState(true);
 /*
   useEffect(() => {

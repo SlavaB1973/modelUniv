@@ -12,7 +12,7 @@
 /build
 
 # pyhon
-#env
+env
 __pycache__
 
 # misc

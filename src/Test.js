@@ -4,11 +4,12 @@ import React, { useState, useEffect } from 'react';
 function Test() {
   const [currentTime, setCurrentTime] = useState(new Date().toLocaleString());
   const [flag, setFlag] = useState(true);
-/*
+  const [data, setData] = useState(null);
+  const [name, setName] = useState('');
   useEffect(() => {
     console.log('Set interval');
     const interval = setInterval(() => {
-      fetch('/time').then(res => res.json()).then(data => {
+      fetch('/app/time').then(res => res.json()).then(data => {
         setCurrentTime(data.time);
         document.title = `${data.time} times`;
       });
@@ -20,12 +21,21 @@ function Test() {
     };
   }, []);
 
-*/
+  const getData = () => {
+    fetch(`/app/great?name=${name}`).then(res => res.json()).then(d => {
+      setData(d);
+    });
+  }
 
   return (
      <>
         
         <p style={{color:flag?'red':'white'}}>The current time is {currentTime}.</p>
+        <div style={{width:400, height:80, backgroundColor:'red'}}>
+          <button onClick={()=>getData()}>Press me to great you</button><input onChange={event => setName(event.target.value)} />
+
+          {data && <div>{data.great}</div>}
+        </div>
      </>
   );
 }
